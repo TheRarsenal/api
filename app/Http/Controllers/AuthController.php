@@ -137,7 +137,7 @@ class AuthController extends Controller
 
         return response()->json([
             "message"=> "Actualizacion completa",
-            'errors'=> $user
+            'datos'=> $user
         ],Response::HTTP_ACCEPTED);
 
     }
