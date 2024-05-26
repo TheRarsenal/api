@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellido');
-            $table->bigInteger('dpi')->unique();
+            $table->bigInt('dpi')->unique();
             $table->integer('telefono');
             $table->string('direccion');
             $table->float('ingresos');
