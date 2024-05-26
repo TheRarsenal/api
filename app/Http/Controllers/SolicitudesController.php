@@ -34,7 +34,7 @@ class SolicitudesController extends Controller
         $request->validate([
             'nombre' => 'required',
             'apellido' => 'required',
-            'dpi'=> 'required|integer|unique:solicitudes',
+            'dpi'=> 'required|unique:solicitudes',
             'telefono' => 'required',
             'direccion'=>'required',
             'ingresos'=>'required',
@@ -100,7 +100,7 @@ class SolicitudesController extends Controller
         $request->validate([ // Valida los datos de entrada
             'nombre' => 'string|max:255',
             'apellido' => 'string|max:255',
-            'dpi' => 'bigint|unique:solicitudes,dpi,' . $solicitud->id, // Validación única para DPI, excluyendo el ID actual
+            'dpi' => 'unique:solicitudes,dpi,' . $solicitud->id, // Validación única para DPI, excluyendo el ID actual
             'telefono' => 'integer',
             'direccion' => 'string',
             'ingresos' => 'numeric',
@@ -150,7 +150,7 @@ class SolicitudesController extends Controller
         $request->validate([ // Valida los datos de entrada
             'nombre' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
-            'dpi' => 'required|bigint|unique:solicitudes,dpi,' . $solicitud->id, // Validación única para DPI, excluyendo el ID actual
+            'dpi' => 'required|unique:solicitudes,dpi,' . $solicitud->id, // Validación única para DPI, excluyendo el ID actual
             'telefono' => 'required|integer',
             'direccion' => 'required|string',
             'ingresos' => 'required|numeric',
